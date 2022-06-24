@@ -101,6 +101,6 @@
   background: var(--ustensiles-color);
 }
 
-/* .hide__search {
+.hide__search {
   visibility: hidden;
-} */
+}
