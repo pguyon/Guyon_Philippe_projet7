@@ -1,0 +1,102 @@
+#search {
+  display: flex;
+  color: white;
+}
+
+.search__wrapper {
+  position: relative;
+}
+
+.search__wrapper::after {
+  content: "";
+  position: absolute;
+  height: 10px;
+  width: 16px;
+  background: url("../images/Arrow.png");
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  transition: transform 0.4s ease-in-out;
+}
+
+.search__wrapper.input:focus .search__wrapper::after {
+  transform: rotate(180deg);
+}
+
+.search__wrapper label {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+}
+
+/* Filters and lists */
+#resume__filter a {
+  display: inline-block;
+  padding: 1em;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  color: var(--white);
+}
+
+#resume__filter a:hover {
+  color: var(--black);
+}
+
+.search__box {
+  position: relative;
+  margin-right: 1.4rem;
+}
+
+.search__list {
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  max-height: 390px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  width: min(450px, 100%);
+  z-index: 1;
+  transform: translateY(-10px);
+  transition: width 0.4s ease-in-out;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.search__list li {
+  display: flex;
+}
+
+.search__list a {
+  width: 150px;
+  padding: 1em;
+  cursor: pointer;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.search__list a:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.ingredients input,
+.ingredients ul,
+.ig-tag {
+  background: var(--ingredient-color);
+}
+
+.appliances input,
+.appliances ul,
+.ap-tag {
+  background: var(--appareil-color);
+}
+
+.ustensils input,
+.ustensils ul,
+.us-tag {
+  background: var(--ustensiles-color);
+}

@@ -1,78 +1,43 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+@import url("../css/searchBar.css");
+@import url("../css/filterSearch.css");
 
 :root {
-    --primary-color: #d04f4f;
-    --ingredient-color: #3282f7;
-    --appareil-color: #68d9a4;
-    --ustensiles-color: #ed6454;
-    --background-grey: #e7e7e7;
-    --recipe-descriptiont-font-family: 'Roboto', sans-serif;
-    --recipe-description-font-size: 14px;
-    --recipe-description-line-height: 16px;
-    --recipe-name-font-family: 'Lato', sans-serif;
-    --recipe-name-font-weight: 400;
-    --recipe-name-font-size: 18px;
-    --recipe-name-line-height: 21.6px;
-    --ingredient-font-family :  'Lato', sans-serif;
-    --ingredient-font-weight: 400;
-    --ingredient-font-size: 14px;
-    --ingrdedient-line-height: 14.4px;
-  }
+  --primary-color: #d04f4f;
+  --ingredient-color: #3282f7;
+  --appareil-color: #68d9a4;
+  --ustensiles-color: #ed6454;
+  --background-grey: #e7e7e7;
+  --recipe-descriptiont-font-family: "Roboto", sans-serif;
+  --recipe-description-font-size: 14px;
+  --recipe-description-line-height: 16px;
+  --recipe-name-font-family: "Lato", sans-serif;
+  --recipe-name-font-weight: 400;
+  --recipe-name-font-size: 18px;
+  --recipe-name-line-height: 21.6px;
+  --ingredient-font-family: "Lato", sans-serif;
+  --ingredient-font-weight: 400;
+  --ingredient-font-size: 14px;
+  --ingrdedient-line-height: 14.4px;
+}
 
-  body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-x: hidden;
-  }
-  
-  main {
-    width: 100%;
-    padding: 0 13%;
-  }
-  
-  #logo {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 250px;
-    margin-bottom: 25px;
-  }
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
 
-  /* SEARCHBAR */
-  #main-search {
-    width: 100%;
-    background: var(--background-grey);
-    color: black;
-    padding-right: 4rem;
-  }
-  
-  .search__section {
-    position: relative;
-    margin-bottom: 1rem;
-  }
-  
-  .search__section::after {
-    content: "";
-    position: absolute;
-    right: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 33px;
-    height: 33px;
-    background: url("../images/loupe.png");
-  }
-  
-  .search__principal input {
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    padding: 1rem;
-    color: white;
-    width: 150px;
-    height: 70px;
-    transition: width 0.4s ease-in-out;
-    font-size: 22px;
-  }
+main {
+  width: 100%;
+  padding: 0 13%;
+}
+
+#logo {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250px;
+  margin-bottom: 25px;
+}
