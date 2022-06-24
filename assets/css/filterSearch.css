@@ -38,11 +38,7 @@
   margin-right: 1rem;
   border-radius: 5px;
   cursor: pointer;
-  color: var(--white);
-}
-
-#resume__filter a:hover {
-  color: var(--black);
+  color: white;
 }
 
 .search__box {

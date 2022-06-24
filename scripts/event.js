@@ -31,7 +31,7 @@ const addLiEvents = () => {
         case "appareils__list":
           createTag("ap-tag", tagElement);
           break;
-        case "ustensiles-list":
+        case "ustensiles__list":
           createTag("us-tag", tagElement);
           break;
       }

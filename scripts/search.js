@@ -1,20 +1,21 @@
 //Searchbar function
-
 const mainSearch = () => {
   let filteredRecipes = recipes;
+
+  // Get value of searchbar input and put it in lower case
   const result = document.getElementById("main__search").value.toLowerCase();
 
-  // Tag filters
+  // Filter recipies by tags
   document.querySelectorAll("#resume__filter a").forEach((tag) => {
-    const tagInput = tag.textContent.toLocaleLowerCase();
+    const tagValue = tag.textContent.toLocaleLowerCase();
     filteredRecipes = filteredRecipes.filter(
       (food) =>
         food.ingredients.some((item) =>
-          item.ingredient.toLowerCase().includes(tagInput)
+          item.ingredient.toLowerCase().includes(tagValue)
         ) ||
-        food.appliance.toLowerCase().includes(tagInput) ||
+        food.appliance.toLowerCase().includes(tagValue) ||
         food.ustensils.some((ustensil) =>
-          ustensil.toLowerCase().includes(tagInput)
+          ustensil.toLowerCase().includes(tagValue)
         )
     );
     updateContent(filteredRecipes);
@@ -42,7 +43,8 @@ const mainSearch = () => {
     }
 
     if (filteredRecipes.length === 0) {
-      recipeGallery.textContent = "Aucune recette ne correspond à vos critères";
+      document.querySelector(".recipe__gallery").textContent =
+        "Aucune recette ne correspond à vos critères";
     } else {
       updateContent(newRecipeTable);
     }

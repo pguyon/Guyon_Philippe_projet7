@@ -7,7 +7,7 @@ const createCard = (data) => {
 
   // Creates card and set content for each object of Array from data param
   data.forEach((food) => {
-    // Initialize variables for readability
+    // Initialize variables
     const card = template.content.cloneNode(true).children[0];
     const title = card.querySelector(".recipe__title");
     const time = card.querySelector(".recipe__time");
@@ -41,7 +41,7 @@ const createCard = (data) => {
 };
 
 const createLists = (data) => {
-  // Initialize variables
+  // Create array
   const ingredientList = [],
     appareilsList = [],
     ustensilList = [];
@@ -52,7 +52,7 @@ const createLists = (data) => {
     .querySelectorAll(".search__list")
     .forEach((searchlist) => (searchlist.innerHTML = ""));
 
-  // Populate each list with Array from data param
+  // Generate list with Array from data
   data.forEach((food) => {
     food.ingredients.forEach((item) =>
       ingredientList.indexOf(item.ingredient) === -1
@@ -112,7 +112,6 @@ const updateContent = (data) => {
   addLiEvents();
 };
 
-// Lancement initial du script
 const init = () => {
   updateContent(recipes);
   mainSearch();
