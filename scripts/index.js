@@ -1,5 +1,6 @@
 const template = document.querySelector("template");
 
+// Create HTML content for recipes cards
 function createCard(data) {
   // Reset HTML of cards gallery
   document.querySelector(".recipe__gallery").innerHTML = "";
@@ -39,4 +40,71 @@ function createCard(data) {
   });
 }
 
+function createLists(data) {
+  // Initialize variables
+  const ingredientList = [],
+    appareilsList = [],
+    ustensilList = [];
+  const lists = [ingredientList, appareilsList, ustensilList];
+
+  // Reset HTML of secondary search lists
+  document
+    .querySelectorAll(".search__list")
+    .forEach((searchlist) => (searchlist.innerHTML = ""));
+
+  // Populate each list with Array from data param
+  data.forEach((food) => {
+    food.ingredients.forEach((item) =>
+      ingredientList.indexOf(item.ingredient) === -1
+        ? ingredientList.push(item.ingredient)
+        : ""
+    );
+    appareilsList.indexOf(food.appliance) === -1
+      ? appareilsList.push(food.appliance)
+      : "";
+    food.ustensils.forEach((ustensil) =>
+      ustensilList.indexOf(ustensil) === -1 ? ustensilList.push(ustensil) : ""
+    );
+  });
+
+  // Generate list items depending on value in searchbox input
+  lists.forEach((list) => {
+    list.sort();
+    list.forEach((item) => {
+      // Creates list item
+      const itemLi = template.content.cloneNode(true).children[2];
+      itemLi.firstElementChild.textContent = `${item
+        .slice(0, 1)
+        .toUpperCase()}${item.slice(1).toLowerCase()}`;
+
+      // Adds list item to HTML
+
+      const addItemToList = (listType) => {
+        const inputItem = document
+          .getElementById(`${listType}__search`)
+          .value.toLowerCase();
+        if (
+          itemLi.firstElementChild.textContent.toLowerCase().includes(inputItem)
+        ) {
+          document.getElementById(`${listType}__list`).appendChild(itemLi);
+        }
+      };
+
+      // Checks for list item type
+      switch (list) {
+        case ingredientList:
+          addItemToList("ingredients");
+          break;
+        case appareilsList:
+          addItemToList("appareils");
+          break;
+        case ustensilList:
+          addItemToList("ustensiles");
+          break;
+      }
+    });
+  });
+}
+
 createCard(recipes);
+createLists(recipes);

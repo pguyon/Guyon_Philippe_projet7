@@ -89,14 +89,18 @@
   background: var(--ingredient-color);
 }
 
-.appliances input,
-.appliances ul,
+.appareils input,
+.appareils ul,
 .ap-tag {
   background: var(--appareil-color);
 }
 
-.ustensils input,
-.ustensils ul,
+.ustensiles input,
+.ustensiles ul,
 .us-tag {
   background: var(--ustensiles-color);
 }
+
+/* .hide__search {
+  visibility: hidden;
+} */
