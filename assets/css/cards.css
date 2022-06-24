@@ -1,0 +1,81 @@
+.recipe__gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 50px;
+  margin: 2rem 0;
+}
+
+.recipe__card {
+  background: var(--background-grey);
+  border-radius: 5px;
+  max-height: 380px;
+  overflow: hidden;
+}
+
+.recipe__card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card__bottom {
+  padding: 1rem;
+}
+
+.recipe__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.recipe__time {
+  position: relative;
+  min-width: 80px;
+  text-align: right;
+}
+
+.recipe__time::before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background: url("../images/Clock.png");
+  background-size: cover;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.recipe__title {
+  font-size: 18px;
+  font-weight: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  max-height: 55px;
+  max-width: 220px;
+  overflow: hidden;
+}
+
+.recipe__bottom {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  height: 150px;
+}
+
+.recipe__bottom > * {
+  width: 45%;
+  font-size: 12px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  height: 110px;
+}
+
+.recipe {
+  font-family: var(--recipe-descriptiont-font-family);
+}

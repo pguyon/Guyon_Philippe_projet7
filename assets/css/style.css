@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
 @import url("../css/searchBar.css");
 @import url("../css/filterSearch.css");
+@import url("../css/cards.css");
 
 :root {
   --primary-color: #d04f4f;
