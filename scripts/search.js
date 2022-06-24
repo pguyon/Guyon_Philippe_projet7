@@ -1,11 +1,12 @@
 const result = document.getElementById("main__search");
+const recipeGallery = document.querySelector(".recipe__gallery");
 
 //Searchbar function
 
 function mainSearch() {
   let filteredRecipes = recipes;
 
-  result.addEventListener("input", (e) => {
+  result.addEventListener("keyup", (e) => {
     let inputValue = e.target.value.toLowerCase();
     if (inputValue.length >= 3) {
       const newRecipeTable = [];
@@ -29,10 +30,10 @@ function mainSearch() {
       }
 
       if (filteredRecipes.length === 0) {
-        document.querySelector(".recipe__gallery").textContent =
+        recipeGallery.textContent =
           "Aucune recette ne correspond à vos critères";
       } else {
-        createCard(newRecipeTable);
+        updateContent(newRecipeTable);
       }
     } else {
       createCard(filteredRecipes);
