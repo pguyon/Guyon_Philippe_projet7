@@ -5,12 +5,12 @@
   padding-right: 4rem;
 }
 
-.search__section {
+.top__search {
   position: relative;
   margin-bottom: 1rem;
 }
 
-.search__section::after {
+.top__search::after {
   content: "";
   position: absolute;
   right: 1rem;
@@ -18,17 +18,16 @@
   transform: translateY(-50%);
   width: 33px;
   height: 33px;
-  background: url("../images/loupe.png");
+  background: url("../images/Mglass.png");
 }
 
-.search__principal input {
+input {
   outline: none;
   border: none;
   border-radius: 5px;
   padding: 1rem;
   color: white;
-  width: 150px;
+  width: 200px;
   height: 70px;
   transition: width 0.4s ease-in-out;
-  font-size: 22px;
 }
