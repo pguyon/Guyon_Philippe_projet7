@@ -24,7 +24,7 @@ const mainSearch = () => {
   // SearchBar
 
   if (result.length >= 3) {
-    const newRecipeTable = [];
+    const newRecipeArray = [];
     for (let i = 0; i < filteredRecipes.length; i++) {
       const food = filteredRecipes[i];
       let ingredientsIncluded = false;
@@ -38,15 +38,17 @@ const mainSearch = () => {
         food.description.toLowerCase().includes(result) ||
         ingredientsIncluded
       ) {
-        newRecipeTable.push(food);
+        newRecipeArray.push(food);
       }
     }
 
     if (filteredRecipes.length === 0) {
+      console.log("tableau vide");
       document.querySelector(".recipe__gallery").textContent =
-        "Aucune recette ne correspond à vos critères";
+        "Aucunes recettes ne correspond à vos critères";
     } else {
-      updateContent(newRecipeTable);
+      updateContent(newRecipeArray);
+      console.log("je sais pas où est le problème");
     }
   } else {
     updateContent(filteredRecipes);
