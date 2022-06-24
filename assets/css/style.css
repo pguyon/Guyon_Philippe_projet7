@@ -3,6 +3,7 @@
 @import url("../css/searchBar.css");
 @import url("../css/filterSearch.css");
 @import url("../css/cards.css");
+@import url("../css/responsive.css");
 
 :root {
   --primary-color: #d04f4f;

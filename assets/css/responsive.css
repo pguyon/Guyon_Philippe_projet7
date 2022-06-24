@@ -1,0 +1,62 @@
+@media screen and (max-width: 1080px) {
+  /* Tablet - Search */
+
+  .search__list {
+    width: min(300px, 100%);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* Mobile - General */
+
+  main {
+    padding: 0 2%;
+    max-width: 500px;
+  }
+
+  input {
+    height: unset;
+    width: 100%;
+  }
+
+  /* Mobile - Search*/
+
+  #search {
+    display: block;
+  }
+
+  .search__wrapper {
+    width: 100%;
+  }
+
+  .search__box {
+    display: flex;
+    margin: 0 0 1rem;
+  }
+
+  #resume__filter a {
+    padding: 0.5em;
+  }
+
+  .search__list {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    width: 100%;
+    transform: translateY(50px);
+    transition: max-height 0.4s ease-in-out;
+    font-size: 14px;
+  }
+
+  .search__list a {
+    width: 150px;
+    padding: 0.5em;
+  }
+
+  .recipe__gallery {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .hide__search {
+    max-height: 0px;
+  }
+}
