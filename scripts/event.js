@@ -1,6 +1,6 @@
 //Add events on filter list items
 
-function addSearchboxEvents() {
+const addSearchboxEvents = () => {
   const searchBoxes = document.querySelectorAll(".search__wrapper input");
   searchBoxes.forEach((input) => {
     input.addEventListener("focus", (event) => focusSecondarySearch(event));
@@ -9,18 +9,18 @@ function addSearchboxEvents() {
   });
 
   document.getElementById("main__search").addEventListener("input", mainSearch);
-}
+};
 
-function focusSecondarySearch(event) {
+const focusSecondarySearch = (event) => {
   const input = event.currentTarget;
   input.classList.toggle("secondary-input__focus");
   input.previousElementSibling.classList.toggle("sr-only");
   input.parentElement.classList.toggle("rotate-pseudo");
   input.parentElement.nextElementSibling.classList.toggle("hide__search");
   input.value = "";
-}
+};
 
-function addLiEvents() {
+const addLiEvents = () => {
   document.querySelectorAll(".search__list a").forEach((li) =>
     li.addEventListener("mousedown", (event) => {
       const tagElement = event.target.cloneNode(true);
@@ -37,7 +37,7 @@ function addLiEvents() {
       }
     })
   );
-}
+};
 
 //Creates Tags on click
 
@@ -56,8 +56,3 @@ const createTag = (tagType, tag) => {
   document.getElementById("resume__filter").appendChild(tag);
   mainSearch();
 };
-
-addSearchboxEvents();
-focusSecondarySearch();
-addLiEvents();
-createTag();

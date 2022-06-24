@@ -3,7 +3,7 @@ const recipeGallery = document.querySelector(".recipe__gallery");
 
 //Searchbar function
 
-function mainSearch() {
+const mainSearch = () => {
   let filteredRecipes = recipes;
 
   // Tag filters - Secondary Search
@@ -19,7 +19,7 @@ function mainSearch() {
           ustensil.toLowerCase().includes(tagInput)
         )
     );
-    createCard(filteredRecipes);
+    updateContent(filteredRecipes);
   });
 
   // SearchBar
@@ -50,11 +50,10 @@ function mainSearch() {
         recipeGallery.textContent =
           "Aucune recette ne correspond à vos critères";
       } else {
-        createCard(newRecipeTable);
+        updateContent(newRecipeTable);
       }
     } else {
-      createCard(filteredRecipes);
+      updateContent(filteredRecipes);
     }
   });
-}
-mainSearch();
+};

@@ -1,7 +1,7 @@
 const template = document.querySelector("template");
 
 // Create HTML content for recipes cards
-function createCard(data) {
+const createCard = (data) => {
   // Reset HTML of cards gallery
   document.querySelector(".recipe__gallery").innerHTML = "";
 
@@ -38,9 +38,9 @@ function createCard(data) {
     // Add card to gallery
     document.querySelector(".recipe__gallery").appendChild(card);
   });
-}
+};
 
-function createLists(data) {
+const createLists = (data) => {
   // Initialize variables
   const ingredientList = [],
     appareilsList = [],
@@ -104,7 +104,22 @@ function createLists(data) {
       }
     });
   });
-}
+};
 
-createCard(recipes);
-createLists(recipes);
+const updateContent = (data) => {
+  createCard(data);
+  createLists(data);
+  addLiEvents();
+};
+
+// Lancement initial du script
+const init = () => {
+  updateContent(recipes);
+  mainSearch();
+  addSearchboxEvents();
+};
+
+/**
+ * Launches initial JS on first load
+ */
+init();
