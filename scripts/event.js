@@ -1,4 +1,15 @@
-/* //Add events on filter list items
+//Add events on filter list items
+
+function addSearchboxEvents() {
+  const searchBoxes = document.querySelectorAll(".search__wrapper input");
+  searchBoxes.forEach((input) => {
+    input.addEventListener("focus", (event) => focusSecondarySearch(event));
+    input.addEventListener("focusout", (event) => focusSecondarySearch(event));
+    input.addEventListener("input", mainSearch);
+  });
+
+  document.getElementById("main__search").addEventListener("input", mainSearch);
+}
 
 function addLiEvents() {
   document.querySelectorAll(".search__list a").forEach((li) =>
@@ -39,4 +50,3 @@ const createTag = (tagType, tag) => {
 
 addLiEvents();
 createTag();
- */

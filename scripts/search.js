@@ -6,6 +6,23 @@ const recipeGallery = document.querySelector(".recipe__gallery");
 function mainSearch() {
   let filteredRecipes = recipes;
 
+  // Tag filters - Secondary Search
+  document.querySelectorAll("#resume__filter a").forEach((tag) => {
+    const tagInput = tag.textContent.toLocaleLowerCase();
+    filteredRecipes = filteredRecipes.filter(
+      (food) =>
+        food.ingredients.some((item) =>
+          item.ingredient.toLowerCase().includes(tagInput)
+        ) ||
+        food.appliance.toLowerCase().includes(tagInput) ||
+        food.ustensils.some((ustensil) =>
+          ustensil.toLowerCase().includes(tagInput)
+        )
+    );
+    createCard(filteredRecipes);
+  });
+
+  // SearchBar
   result.addEventListener("keyup", (e) => {
     let inputValue = e.target.value.toLowerCase();
     if (inputValue.length >= 3) {
@@ -33,7 +50,7 @@ function mainSearch() {
         recipeGallery.textContent =
           "Aucune recette ne correspond à vos critères";
       } else {
-        updateContent(newRecipeTable);
+        createCard(newRecipeTable);
       }
     } else {
       createCard(filteredRecipes);
