@@ -43,3 +43,31 @@ main {
   width: 250px;
   margin-bottom: 25px;
 }
+
+.bold {
+  font-weight: bold;
+}
+
+.rotate-pseudo::after {
+  transform: rotate(180deg) translateY(50%);
+}
+
+.hidden {
+  display: none;
+}
+
+.hide__search {
+  visibility: hidden;
+}
+
+.remove__tag {
+  display: inline-block;
+  width: 20px;
+  margin-left: 10px;
+  transform: translateY(3px);
+  pointer-events: none;
+}
+
+.secondary-input__focus {
+  width: 450px;
+}

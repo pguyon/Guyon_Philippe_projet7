@@ -100,7 +100,3 @@
 .us-tag {
   background: var(--ustensiles-color);
 }
-
-.hide__search {
-  visibility: hidden;
-}

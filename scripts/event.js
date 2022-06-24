@@ -11,6 +11,15 @@ function addSearchboxEvents() {
   document.getElementById("main__search").addEventListener("input", mainSearch);
 }
 
+function focusSecondarySearch(event) {
+  const input = event.currentTarget;
+  input.classList.toggle("secondary-input__focus");
+  input.previousElementSibling.classList.toggle("sr-only");
+  input.parentElement.classList.toggle("rotate-pseudo");
+  input.parentElement.nextElementSibling.classList.toggle("hide__search");
+  input.value = "";
+}
+
 function addLiEvents() {
   document.querySelectorAll(".search__list a").forEach((li) =>
     li.addEventListener("mousedown", (event) => {
@@ -48,5 +57,7 @@ const createTag = (tagType, tag) => {
   mainSearch();
 };
 
+addSearchboxEvents();
+focusSecondarySearch();
 addLiEvents();
 createTag();
