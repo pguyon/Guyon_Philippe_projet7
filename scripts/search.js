@@ -36,6 +36,6 @@ const mainSearch = () => {
   }
   filteredRecipes.length === 0
     ? (document.querySelector(".recipe__gallery").textContent =
-        "Aucune recette ne correspond à vos critères")
+        "Aucune recette ne correspond à votre critère… vous pouvez chercher « tarte aux pommes », « poisson », etc.")
     : updateContent(filteredRecipes);
 };
