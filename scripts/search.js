@@ -9,12 +9,12 @@ const mainSearch = () => {
   document.querySelectorAll("#resume__filter a").forEach((tag) => {
     const tagValue = tag.textContent.toLocaleLowerCase();
     filteredRecipes = filteredRecipes.filter(
-      (food) =>
-        food.ingredients.some((item) =>
+      (recipe) =>
+        recipe.ingredients.some((item) =>
           item.ingredient.toLowerCase().includes(tagValue)
         ) ||
-        food.appliance.toLowerCase().includes(tagValue) ||
-        food.ustensils.some((ustensil) =>
+        recipe.appliance.toLowerCase().includes(tagValue) ||
+        recipe.ustensils.some((ustensil) =>
           ustensil.toLowerCase().includes(tagValue)
         )
     );
@@ -23,20 +23,19 @@ const mainSearch = () => {
 
   // SearchBar
   if (result.length >= 3) {
-    filteredRecipes = filteredRecipes.filter((recipe) => {
-      recipe.description.toLowerCase().includes(result) ||
+    filteredRecipes = filteredRecipes.filter(
+      (recipe) =>
         recipe.name.toLowerCase().includes(result) ||
-        recipe.ingredients.some((i) =>
-          i.ingredient.toLowerCase().includes(result)
-        );
-    });
-    if (filteredRecipes.length === 0) {
-      document.querySelector(".recipe__gallery").textContent =
-        "Aucunes recettes ne correspond à vos critères";
-    } else {
-      updateContent(newRecipeArray);
-    }
+        recipe.description.toLowerCase().includes(result) ||
+        recipe.ingredients.some((item) =>
+          item.ingredient.toLowerCase().includes(result)
+        )
+    );
   } else {
     updateContent(filteredRecipes);
   }
+  filteredRecipes.length === 0
+    ? (document.querySelector(".recipe__gallery").textContent =
+        "Aucune recette ne correspond à vos critères")
+    : updateContent(filteredRecipes);
 };
