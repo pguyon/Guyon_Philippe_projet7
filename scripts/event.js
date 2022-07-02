@@ -14,7 +14,7 @@ const addSearchboxEvents = () => {
 const focusSecondarySearch = (event) => {
   const input = event.currentTarget;
   input.classList.toggle("secondary-input__focus");
-  input.previousElementSibling.classList.toggle("sr-only");
+  input.previousElementSibling.classList.toggle("label__hide");
   input.parentElement.classList.toggle("rotate-pseudo");
   input.parentElement.nextElementSibling.classList.toggle("hide__search");
   input.value = "";

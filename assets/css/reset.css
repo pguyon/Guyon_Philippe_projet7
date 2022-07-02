@@ -1,10 +1,8 @@
-
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
-
 
 body,
 h1,
@@ -19,7 +17,6 @@ dd {
   margin: 0;
 }
 
-
 ul,
 ol {
   list-style: none;
@@ -27,11 +24,9 @@ ol {
   padding-left: 0;
 }
 
-
 html:focus-within {
   scroll-behavior: smooth;
 }
-
 
 body {
   min-height: 100vh;
@@ -39,7 +34,6 @@ body {
   line-height: 1.5;
   padding: 0;
 }
-
 
 a {
   text-decoration: none;
@@ -53,23 +47,9 @@ picture {
   display: block;
 }
 
-
 input,
 button,
 textarea,
 select {
   font: inherit;
-}
-
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
 }
