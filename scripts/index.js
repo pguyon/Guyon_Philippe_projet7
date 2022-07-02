@@ -5,7 +5,7 @@ const createCard = (data) => {
   // Reset HTML of cards gallery
   document.querySelector(".recipe__gallery").innerHTML = "";
 
-  // Creates card and set content for each object of Array from data param
+  // Creates card and set content for each object of Array from data
   data.forEach((food) => {
     // Initialize variables
     const card = template.content.cloneNode(true).children[0];
@@ -118,7 +118,4 @@ const init = () => {
   addSearchboxEvents();
 };
 
-/**
- * Launches initial JS on first load
- */
 init();

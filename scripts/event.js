@@ -1,4 +1,4 @@
-//Add events on filter list items
+//Add events on search
 const addSearchboxEvents = () => {
   const searchBoxes = document.querySelectorAll(".search__wrapper input");
   searchBoxes.forEach((input) => {
