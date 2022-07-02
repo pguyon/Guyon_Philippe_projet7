@@ -1,5 +1,4 @@
 //Add events on filter list items
-
 const addSearchboxEvents = () => {
   const searchBoxes = document.querySelectorAll(".search__wrapper input");
   searchBoxes.forEach((input) => {
@@ -11,6 +10,7 @@ const addSearchboxEvents = () => {
   document.getElementById("main__search").addEventListener("input", mainSearch);
 };
 
+//Toggle styles and reset input value
 const focusSecondarySearch = (event) => {
   const input = event.currentTarget;
   input.classList.toggle("secondary-input__focus");
@@ -20,6 +20,7 @@ const focusSecondarySearch = (event) => {
   input.value = "";
 };
 
+//Add events for list items
 const addLiEvents = () => {
   document.querySelectorAll(".search__list a").forEach((li) =>
     li.addEventListener("mousedown", (event) => {
@@ -40,7 +41,6 @@ const addLiEvents = () => {
 };
 
 //Creates Tags on click
-
 const createTag = (tagType, tag) => {
   const img = document.createElement("img");
   img.setAttribute("alt", "Close tag icon");
