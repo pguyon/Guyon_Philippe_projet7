@@ -1,3 +1,5 @@
+"use strict";
+
 const template = document.querySelector("template");
 
 // Create HTML content for recipes cards
