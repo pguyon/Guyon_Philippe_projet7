@@ -4,6 +4,10 @@
   .search__list {
     width: min(300px, 100%);
   }
+
+  .secondary-input__focus {
+    width: 300px !important;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -42,7 +46,7 @@
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     width: 100%;
     transform: translateY(50px);
-    transition: max-height 0.4s ease-in-out;
+    /* transition: max-height 0.4s ease-in-out; */
     font-size: 14px;
   }
 
@@ -58,5 +62,14 @@
 
   .hide__search {
     max-height: 0px;
+  }
+
+  .secondary-input__focus {
+    width: 100%;
+  }
+  .ingredients input,
+  .appareils input,
+  .ustensiles input {
+    width: inherit;
   }
 }
