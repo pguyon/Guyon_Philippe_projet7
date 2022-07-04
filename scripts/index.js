@@ -5,7 +5,7 @@ const createCard = (data) => {
   // Reset HTML of cards gallery
   document.querySelector(".recipe__gallery").innerHTML = "";
 
-  // Creates card and set content for each object of Array from data
+  // Creates card and set content
   data.forEach((food) => {
     // Initialize variables
     const card = template.content.cloneNode(true).children[0];
@@ -52,7 +52,7 @@ const createLists = (data) => {
     .querySelectorAll(".search__list")
     .forEach((searchlist) => (searchlist.innerHTML = ""));
 
-  // Generate list with Array from data
+  // Generate list
   data.forEach((food) => {
     food.ingredients.forEach((item) =>
       ingredientList.indexOf(item.ingredient) === -1
