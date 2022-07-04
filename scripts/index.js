@@ -106,16 +106,13 @@ const createLists = (data) => {
   });
 };
 
+// Update card gallery and search list items
 const updateContent = (data) => {
   createCard(data);
   createLists(data);
   addLiEvents();
 };
 
-const init = () => {
-  updateContent(recipes);
-  mainSearch();
-  addSearchboxEvents();
-};
-
-init();
+updateContent(recipes);
+mainSearch();
+addSearchboxEvents();
