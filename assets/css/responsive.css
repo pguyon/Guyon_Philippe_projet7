@@ -65,8 +65,9 @@
   }
 
   .secondary-input__focus {
-    width: 100%;
+    width: inherit !important;
   }
+
   .ingredients input,
   .appareils input,
   .ustensiles input {
