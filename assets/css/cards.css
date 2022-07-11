@@ -76,6 +76,6 @@
   height: 110px;
 }
 
-.recipe {
+.recipe__card {
   font-family: var(--recipe-descriptiont-font-family);
 }
